@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusAid | Home</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="container nav-content">
+            <h1 class="logo">CampusAid</h1>
+            <nav>
+                <a href="/">Home</a>
+                <a href="/lost_found">Lost & Found</a>
+                <a href="/ask_senior">Ask a Senior</a>
+                <a href="/peer_tutoring">Peer Tutoring</a>
+                <a href="/login" class="login-btn">Login</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="overlay"></div>
+        <div class="hero-content">
+            <h2>Welcome to CampusAid</h2>
+            <p>Your one-stop platform for finding items, advice, and tutors.</p>
+
+            <!-- Search Bar -->
+            <div class="search-box">
+                <form action="/search" method="get">
+                    <input type="text" name="query" placeholder="Search tutors, items, or questions..." required>
+                    <button type="submit"><i class="fas fa-search"></i> Search</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature Sections -->
+    <section class="features">
+        <div class="container feature-grid">
+            <!-- Lost & Found -->
+            <div class="feature-card">
+                <i class="fas fa-search feature-icon"></i>
+                <h3>Lost & Found</h3>
+                <p>Report or search for lost items.</p>
+                <a href="/lost_found" class="btn">Learn More</a>
+            </div>
+
+            <!-- Ask a Senior -->
+            <div class="feature-card">
+                <i class="fas fa-graduation-cap feature-icon"></i>
+                <h3>Ask a Senior</h3>
+                <p>Ask anonymously and vote for the best answers.</p>
+                <a href="/ask_senior" class="btn">Learn More</a>
+            </div>
+
+            <!-- Peer Tutoring -->
+            <div class="feature-card">
+                <i class="fas fa-users feature-icon"></i>
+                <h3>Peer Tutoring</h3>
+                <p>Find and connect with tutors in your school.</p>
+                <a href="/peer_tutoring" class="btn">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Made for Students by Students ❤️ CampusAid 2025</p>
+    </footer>
+</body>
+</html>

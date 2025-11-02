@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CampusAid – Lost & Found</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+  <h1>Lost &amp; Found</h1>
+
+  <!-- ===========================
+       1) Post an Item (Lost / Found)
+       =========================== -->
+  <section aria-labelledby="post-item-title">
+    <h2 id="post-item-title">Report an Item</h2>
+
+    <form onsubmit="return false;">
+      <!-- Lost / Found -->
+      <fieldset>
+        <legend>Is this item lost or found?</legend>
+        <label><input type="radio" name="type" value="lost" checked> Lost</label>
+        <label><input type="radio" name="type" value="found"> Found</label>
+      </fieldset>
+      <br>
+
+      <!-- Category -->
+      <label>Category<br>
+        <select name="category" required>
+          <option value="">Choose a category</option>
+          <option value="electronics">Electronics</option>
+          <option value="accessories">Accessories</option>
+          <option value="books">Books</option>
+          <option value="ids">IDs</option>
+          <option value="others">Others</option>
+        </select>
+      </label>
+      <br><br>
+
+      <!-- Item name -->
+      <label>Item name<br>
+        <input type="text" name="title" placeholder="e.g., Blue Calculator, USB-C Charger, Wallet" required>
+      </label>
+      <br><br>
+
+      <!-- Description -->
+      <label>Description<br>
+        <textarea name="description" rows="4" placeholder="Describe the item, color, brand, where you lost/found it…" required></textarea>
+      </label>
+      <br><br>
+
+      <!-- Photo upload (placeholder only for now) -->
+      <label>Photo (optional)<br>
+        <input type="file" name="photo" accept="image/*">
+      </label>
+      <br><br>
+
+      <button type="submit">Post Item</button>
+    </form>
+  </section>
+
+  <hr>
+
+  <!-- ===========================
+       2) Browse / Filter Items
+       =========================== -->
+  <section aria-labelledby="browse-title">
+    <h2 id="browse-title">Browse Items</h2>
+
+    <form id="browse-filters" onsubmit="return false;">
+      <label>Show
+        <select name="type">
+          <option value="all">All</option>
+          <option value="lost">Lost</option>
+          <option value="found">Found</option>
+        </select>
+      </label>
+
+      <label>Category
+        <select name="category">
+          <option value="all">All</option>
+          <option value="electronics">Electronics</option>
+          <option value="accessories">Accessories</option>
+          <option value="books">Books</option>
+          <option value="ids">IDs</option>
+          <option value="others">Others</option>
+        </select>
+      </label>
+
+      <label>Search
+        <input type="search" name="q" placeholder="Search by name or keyword…">
+      </label>
+
+      <button type="submit">Apply</button>
+    </form>
+
+    <p><em>Tip:</em> Use the filters above to find things faster.</p>
+
+    <!-- Results list (static placeholders for now) -->
+    <div id="results">
+      <!-- Card 1 -->
+      <article>
+        <header>
+          <strong>Type:</strong> Lost &nbsp;|&nbsp;
+          <strong>Category:</strong> Electronics &nbsp;|&nbsp;
+          <strong>Posted:</strong> 2 hours ago
+        </header>
+        <h3>Blue Calculator (Casio fx-991ES)</h3>
+        <p>Lost near Library 2F. Has a small “M.S.” sticker on the back.</p>
+        <!-- Mark as Claimed control (placeholder) -->
+        <label>
+          <input type="checkbox" name="claimed-1"> Mark as Claimed
+        </label>
+      </article>
+
+      <hr>
+
+      <!-- Card 2 -->
+      <article>
+        <header>
+          <strong>Type:</strong> Found &nbsp;|&nbsp;
+          <strong>Category:</strong> IDs &nbsp;|&nbsp;
+          <strong>Posted:</strong> Today, 4:30 PM
+        </header>
+        <h3>Student ID – Ana R.</h3>
+        <p>Found in Cafeteria near the entrance. Will leave it at the front desk.</p>
+        <label>
+          <input type="checkbox" name="claimed-2"> Mark as Claimed
+        </label>
+      </article>
+    </div>
+  </section>
+
+</body>
+</html>

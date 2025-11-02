@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CampusAid – Teacher Dashboard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h1>Teacher Dashboard</h1>
+  <p><em>Manage tutors and moderate Ask a Senior</em></p>
+
+  <!-- ===========================
+       1) Tutor Applications
+       =========================== -->
+  <section aria-labelledby="pending-title">
+    <h2 id="pending-title">Pending Tutor Applications</h2>
+
+    <table border="1" cellpadding="6">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Subjects</th>
+          <th>Availability</th>
+          <th>Bio</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Placeholder row -->
+        <tr>
+          <td>Ana Reyes</td>
+          <td>ana.reyes@example.com</td>
+          <td>Math, Physics</td>
+          <td>Tue/Thu 4–6pm</td>
+          <td>Love teaching problem-solving.</td>
+          <td>
+            <button>✅ Approve</button>
+            <button>❌ Reject</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <hr>
+
+  <!-- ===========================
+       2) Approved Tutors
+       =========================== -->
+  <section aria-labelledby="approved-title">
+    <h2 id="approved-title">Approved Tutors</h2>
+
+    <table border="1" cellpadding="6">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Subjects</th>
+          <th>Availability</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Placeholder row -->
+        <tr>
+          <td>Ken A.</td>
+          <td>ken.a@example.com</td>
+          <td>Literature, Economics</td>
+          <td>Sat 10–12am</td>
+          <td>Approved</td>
+          <td>
+            <button>🚫 Suspend</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <hr>
+
+  <!-- ===========================
+       3) Ask a Senior Moderation
+       =========================== -->
+  <section aria-labelledby="moderation-title">
+    <h2 id="moderation-title">Ask a Senior – Moderation</h2>
+
+    <!-- Question list -->
+    <article>
+      <header>
+        <strong>Q#101</strong> · <span>Academics</span>
+      </header>
+      <p>Is Calculus required for first-year CS?</p>
+      <button>🗑️ Delete Question</button>
+
+      <h3>Answers</h3>
+      <ul>
+        <li>Answer #1: "Only for some tracks." <button>🗑️ Delete</button></li>
+        <li>Answer #2: "Not required for all." <button>🗑️ Delete</button></li>
+      </ul>
+    </article>
+
+    <hr>
+
+    <article>
+      <header>
+        <strong>Q#102</strong> · <span>Clubs</span>
+      </header>
+      <p>Which club is best for public speaking?</p>
+      <button>🗑️ Delete Question</button>
+
+      <h3>Answers</h3>
+      <ul>
+        <li>Answer #1: "Toastmasters is best." <button>🗑️ Delete</button></li>
+        <li>Answer #2: "Debate is great too." <button>🗑️ Delete</button></li>
+      </ul>
+    </article>
+  </section>
+</body>
+</html>

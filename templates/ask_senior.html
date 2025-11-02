@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CampusAid – Ask a Senior (Anonymous)</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h1>Ask a Senior (Anonymous)</h1>
+  <p><em>No names, no emails — questions and answers are anonymous. Each question gets a Q#ID.</em></p>
+
+  <!-- Post an anonymous question -->
+  <section aria-labelledby="ask-title">
+    <h2 id="ask-title">Ask a Question</h2>
+    <form onsubmit="return false;">
+      <label>Topic
+        <select name="topic" required>
+          <option value="">Choose a topic</option>
+          <option>Academics</option>
+          <option>Clubs</option>
+          <option>Advice</option>
+        </select>
+      </label>
+      <br><br>
+
+      <label>Your question (no personal info)
+        <textarea name="question" rows="4" placeholder="Type your question…" required></textarea>
+      </label>
+      <br><br>
+
+      <!-- Optional poll choices (anonymous voting later) -->
+      <fieldset>
+        <legend>Optional poll choices (for quick voting)</legend>
+        <input type="text" name="choice1" placeholder="Choice 1">
+        <input type="text" name="choice2" placeholder="Choice 2">
+        <input type="text" name="choice3" placeholder="Choice 3 (optional)">
+      </fieldset>
+      <br>
+
+      <button type="submit">Post Question (Anonymous)</button>
+    </form>
+  </section>
+
+  <hr>
+
+  <!-- Recent anonymous questions (static placeholders for now) -->
+  <section aria-labelledby="recent-title">
+    <h2 id="recent-title">Recent Questions</h2>
+
+    <!-- Question card -->
+    <article aria-labelledby="q101-title">
+      <header>
+        <strong id="q101-title">Q#101</strong> · <span>Topic: Academics</span>
+      </header>
+      <p>Is Calculus required for first-year CS?</p>
+
+      <!-- Poll voting (anonymous) -->
+      <div>
+        <button>✅ Yes</button>
+        <button>❌ No</button>
+      </div>
+      <small>Votes: Yes (12) · No (5)</small>
+
+      <!-- Anonymous answers thread -->
+      <details style="margin-top:8px;">
+        <summary>Answers (3)</summary>
+        <ul>
+          <li>Answer #1 (anonymous): “Only for some tracks; check the curriculum.”</li>
+          <li>Answer #2 (anonymous): “Not required for all, but strongly recommended.”</li>
+          <li>Answer #3 (anonymous): “Required for CS major, elective for IT.”</li>
+        </ul>
+      </details>
+
+      <!-- Add an anonymous answer -->
+      <form onsubmit="return false;" aria-label="Add anonymous answer">
+        <label>Your answer (no names)
+          <textarea rows="3" placeholder="Share your answer anonymously…" required></textarea>
+        </label>
+        <br>
+        <button type="submit">Post Answer (Anonymous)</button>
+      </form>
+    </article>
+
+    <hr>
+
+    <!-- Another example question card -->
+    <article aria-labelledby="q102-title">
+      <header>
+        <strong id="q102-title">Q#102</strong> · <span>Topic: Clubs</span>
+      </header>
+      <p>Which club is best for public speaking?</p>
+
+      <!-- Poll voting (anonymous) -->
+      <div>
+        <button>Debate</button>
+        <button>Toastmasters</button>
+        <button>Drama</button>
+      </div>
+      <small>Votes: Debate (7) · Toastmasters (10) · Drama (2)</small>
+
+      <!-- Anonymous answers thread -->
+      <details style="margin-top:8px;">
+        <summary>Answers (2)</summary>
+        <ul>
+          <li>Answer #1 (anonymous): “Toastmasters meets weekly and has mentors.”</li>
+          <li>Answer #2 (anonymous): “Debate is more competitive; great for practice.”</li>
+        </ul>
+      </details>
+
+      <!-- Add an anonymous answer -->
+      <form onsubmit="return false;" aria-label="Add anonymous answer">
+        <label>Your answer (no names)
+          <textarea rows="3" placeholder="Share your answer anonymously…" required></textarea>
+        </label>
+        <br>
+        <button type="submit">Post Answer (Anonymous)</button>
+      </form>
+    </article>
+  </section>
+</body>
+</html>

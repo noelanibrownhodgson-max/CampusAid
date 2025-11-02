@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CampusAid – Peer Tutoring</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h1>Peer Tutoring</h1>
+
+  <!-- ===========================
+       1) Find a Tutor (filters)
+       =========================== -->
+  <section aria-labelledby="find-title">
+    <h2 id="find-title">Find a Tutor</h2>
+
+    <form id="tutor-filters" onsubmit="return false;">
+      <label>Subject
+        <select name="subject">
+          <option value="all">All subjects</option>
+          <option>Math</option>
+          <option>Physics</option>
+          <option>Chemistry</option>
+          <option>Biology</option>
+          <option>English</option>
+          <option>Literature</option>
+          <option>Economics</option>
+          <option>Accounting</option>
+          <option>Programming</option>
+        </select>
+      </label>
+
+      <label>Day
+        <select name="day">
+          <option value="any">Any day</option>
+          <option>Mon</option><option>Tue</option><option>Wed</option>
+          <option>Thu</option><option>Fri</option><option>Sat</option>
+        </select>
+      </label>
+
+      <label>Time (optional)
+        <input type="text" name="time" placeholder="e.g., 4–6pm">
+      </label>
+
+      <button type="submit">Apply</button>
+    </form>
+  </section>
+
+  <hr>
+
+  <!-- ===========================
+       2) Tutor Cards (approved only)
+       =========================== -->
+  <section aria-labelledby="list-title">
+    <h2 id="list-title">Available Tutors</h2>
+    <p><em>Only teacher-approved portfolios appear here.</em></p>
+
+    <!-- Static placeholders for now -->
+    <div id="tutor-list">
+      <article aria-labelledby="tutor-mira">
+        <h3 id="tutor-mira">Mira Santos</h3>
+        <p><strong>Subjects:</strong> Math, Physics</p>
+        <p><strong>Availability:</strong> Tue/Thu 4–6pm</p>
+        <p><strong>About:</strong> I love breaking down hard problems into simple steps.</p>
+        <button type="button">Book this tutor</button>
+      </article>
+
+      <hr>
+
+      <article aria-labelledby="tutor-ken">
+        <h3 id="tutor-ken">Ken A.</h3>
+        <p><strong>Subjects:</strong> Literature, Economics</p>
+        <p><strong>Availability:</strong> Sat 10–12am</p>
+        <p><strong>About:</strong> Patient and structured sessions tailored to your syllabus.</p>
+        <button type="button">Book this tutor</button>
+      </article>
+    </div>
+  </section>
+
+  <hr>
+
+  <!-- ===========================
+       3) Book a Session (student form)
+       =========================== -->
+  <section aria-labelledby="book-title">
+    <h2 id="book-title">Book a Tutoring Session</h2>
+    <p><em>Provide your details; your request will be emailed to the tutor you choose.</em></p>
+
+    <form id="booking-form" onsubmit="return false;">
+      <label>Your name
+        <input type="text" name="student_name" placeholder="e.g., Ray McKings" required>
+      </label>
+      <br><br>
+
+      <label>Your email
+        <input type="email" name="student_email" placeholder="you@example.com" required>
+      </label>
+      <br><br>
+
+      <label>Your class / year level
+        <input type="text" name="student_class" placeholder="e.g., Grade 11 – STEM" required>
+      </label>
+      <br><br>
+
+      <label>Subject you need help with
+        <input type="text" name="subject_needed" placeholder="e.g., Calculus" required>
+      </label>
+      <br><br>
+
+      <label>When are you available?
+        <input type="text" name="availability" placeholder="e.g., Tue 4–6pm; Fri 2–4pm" required>
+      </label>
+      <br><br>
+
+      <label>Preferred tutor (optional)
+        <input type="text" name="preferred_tutor" placeholder="e.g., Mira Santos">
+      </label>
+      <br><br>
+
+      <button type="submit">Send Booking Request (Email)</button>
+    </form>
+  </section>
+
+  <hr>
+
+  <!-- ===========================
+       4) Become a Tutor (portfolio)
+       =========================== -->
+  <section aria-labelledby="become-title">
+    <h2 id="become-title">Become a Tutor</h2>
+    <p><strong>Important:</strong> Discuss your portfolio with a teacher first. Only <em>approved</em> portfolios will be visible on the site.</p>
+
+    <form id="tutor-portfolio" onsubmit="return false;">
+      <label>Your email (for receiving booking requests)
+        <input type="email" name="tutor_email" placeholder="you@school.edu" required>
+      </label>
+      <br><br>
+
+      <label>Short bio
+        <textarea name="bio" rows="4" placeholder="Tell students how you can help…" required></textarea>
+      </label>
+      <br><br>
+
+      <label>Subjects you can tutor (comma-separated)
+        <input type="text" name="subjects" placeholder="e.g., Math, Physics" required>
+      </label>
+      <br><br>
+
+      <label>Your availability
+        <input type="text" name="tutor_availability" placeholder="e.g., Tue 4–6pm; Thu 5–7pm" required>
+      </label>
+      <br><br>
+
+      <label>Portfolio photo (optional)
+        <input type="file" name="photo" accept="image/*">
+      </label>
+      <br><br>
+
+      <button type="submit">Submit for Teacher Approval</button>
+    </form>
+
+    <p style="margin-top:8px;">
+      <em>After submission: a teacher will review your portfolio. If approved, your card will appear in “Available Tutors”, and booking forms will be emailed to your address.</em>
+    </p>
+  </section>
+</body>
+</html>
